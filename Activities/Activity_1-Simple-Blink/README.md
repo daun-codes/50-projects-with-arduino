@@ -11,9 +11,9 @@ This is a simple program that blinks the LED on pin 13 on and off.
 ## SCREENSHOTS
 
 
-![Output](../../../Arduino-Project/Activities/Activity_1-Simple-Blink/Activity-1.png)
+![Output](../../Img/Activity-1.png)
 
 ## VIDS
 
 
-![Output](../../../Arduino-Project/Activities/Activity_1-Simple-Blink/Activity-1.mp4)
+![Output](../../Vids/Activity-1.mp4)
