@@ -1,0 +1,3 @@
+[wokwi]
+version = 1
+firmware = 'activity-1-simple-blink.ino.standard.hex'
