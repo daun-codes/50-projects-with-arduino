@@ -15,4 +15,4 @@ In this activity, we will use a button to control the LED chaser. When the butto
 
 ## NOTES
 
-If you want to try this simulation on the internet, you can copy the source code from [here](../Activity_3-LED-Chaser/src/Activity-3-LED-Chaser.ino) and paste it into the [Try It Yourself](https://wokwi.com/) section of the website.
+If you want to try this simulation on the internet, you can copy the source code from [here](../Activity_3-LED-Chaser/src/Activity-3-LED-Chaser.ino) and paste it into [this Website](https://wokwi.com/) section of the website.
