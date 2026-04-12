@@ -4,10 +4,10 @@ In this activity, we will use a button to control the LED chaser. When the butto
 
 ## OBJECTIVE
 
-- Learn how to use a button to control the LED chaser
-- Learn how to use a variable to track the state of the button
-- Learn how to use a variable to track the position of the LED chaser
-- Learn how to use a variable to track the state of the LED chaser
+- Learn how to use a button to control the LED chaser.
+- Learn how to use a variable to track the state of the button.
+- Learn how to use a variable to track the position of the LED chaser.
+- Learn how to use a variable to track the state of the LED chaser.
 
 ## SCREENSHOTS
 
