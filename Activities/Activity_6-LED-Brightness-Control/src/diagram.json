@@ -1,0 +1,63 @@
+{
+  "version": 1,
+  "author": "Don Amodia",
+  "editor": "wokwi",
+  "parts": [
+    {
+      "type": "wokwi-arduino-uno",
+      "id": "uno",
+      "top": 0,
+      "left": 0,
+      "attrs": {}
+    },
+    {
+      "type": "wokwi-led",
+      "id": "led1",
+      "top": -90,
+      "left": 176.6,
+      "attrs": {
+        "color": "red"
+      }
+    },
+    {
+      "type": "wokwi-resistor",
+      "id": "r1",
+      "top": -53.35,
+      "left": 123.4,
+      "rotate": 180,
+      "attrs": {
+        "value": "330"
+      }
+    }
+  ],
+  "connections": [
+    [
+      "led1:C",
+      "r1:1",
+      "black",
+      [
+        "v0"
+      ]
+    ],
+    [
+      "r1:2",
+      "uno:GND.1",
+      "black",
+      [
+        "v0",
+        "h-8.4"
+      ]
+    ],
+    [
+      "led1:A",
+      "uno:9",
+      "green",
+      [
+        "v19.2",
+        "h-38.4",
+        "v9.6"
+      ]
+    ]
+  ],
+  "dependencies": {}
+}
