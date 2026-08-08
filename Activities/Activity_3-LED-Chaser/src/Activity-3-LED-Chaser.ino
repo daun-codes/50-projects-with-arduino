@@ -1,7 +1,22 @@
-/* ------------------------------------
-  ACTIVITY 3 - LED CHASER / KNIGHT RIDER
---------------------------------------*/
+/* -------------------------------------------------------------
+  ACTIVITY 3 - NEW LED CHASER WITH POWER OFF LAST STATE FEATURE
+----------------------------------------------------------------*/
 
+
+/* ========================================
+
+
+Old Features
+-- The 5 Leds are running back and forth but when powered off the LED will always starts to the right 
+-- There is no power off last state
+
+
+New Features
+-- Power off last state is implemented to make the 5 LEDS stop and start from the last state
+-- The 5 Leds are running back and forth with the power off last state
+
+
+============================================ */
 
 
 // Set the pin number to actual led color
@@ -31,27 +46,28 @@ const unsigned int timeInterval = 100;
 
 
 // Set the pattern to default state
-int patternIndex = 0;
+int patternIndex = 255;
 bool patternRunning;
 
 
 
 
 // Define the pattern using a 2D array
-const int pattern[11][5] =
+const int pattern[8][5] =
 {
   {1, 0, 0, 0, 0},    // 0
-  {1, 1, 0, 0, 0},    // 1
-  {0, 1, 1, 0, 0},    // 2
-  {0, 0, 1, 1, 0},    // 3
-  {0, 0, 0, 1, 1},    // 4
-  {0, 0, 0, 0, 1},    // 5
-  {0, 0, 0, 1, 1},    // 6
-  {0, 0, 1, 1, 0},    // 7
-  {0, 1, 1, 0, 0},    // 8
-  {1, 1, 0, 0, 0},    // 9
-  {0, 0, 0, 0, 0},    // 10
+  {0, 1, 0, 0, 0},    // 1
+  {0, 0, 1, 0, 0},    // 2
+  {0, 0, 0, 1, 0},    // 3
+  {0, 0, 0, 0, 1},    // 4
+  {0, 0, 0, 1, 0},    // 5
+  {0, 0, 1, 0, 0},    // 6
+  {0, 1, 0, 0, 0},    // 7
+
 };
+
+
+int lastStep = 255;     // This is used to track the last step of the pattern
 
 
 void setup() {
@@ -90,10 +106,19 @@ void loop() {
 
       if (ledState)
       {
-        patternIndex = 0;
-        patternRunning = true;
-        setPattern(patternIndex);
-        prevTime = millis();
+        if (lastStep != 255) {
+          patternIndex = lastStep;
+          patternRunning = true;
+          setPattern(patternIndex);
+          prevTime = millis();
+        }
+
+        else {
+          patternIndex = 0;
+          patternRunning = true;
+          setPattern(patternIndex);
+          prevTime = millis();
+        }
 
       }
 
@@ -129,7 +154,7 @@ void loop() {
 
       patternIndex++;
 
-      if (patternIndex >= 11)
+      if (patternIndex >= 8)
       {
         patternIndex = 0;
       }
@@ -156,28 +181,7 @@ void setPattern(int step)
   digitalWrite(blueLed, pattern[step][2]);
   digitalWrite(vioLed, pattern[step][3]);
   digitalWrite(greenLed, pattern[step][4]);
+
+  lastStep = step;
+  
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
